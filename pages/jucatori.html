@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jucatori — Basketball World</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="page-loader"><div class="ball-loader"></div></div>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="../index.html" class="logo"><img src="../images/logo.svg" alt="logo"> Basketball <span>World</span></a>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Acasa</a></li>
+        <li><a href="echipe.html">Echipe</a></li>
+        <li><a href="jucatori.html">Jucatori</a></li>
+        <li><a href="istorie.html">Istorie</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="multimedia.html">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta" data-auth="login">Login</a></li>
+        <li><a href="#" class="nav-cta" data-auth="account" style="display:none">Cont</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+      <div class="nav-backdrop"></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="players.title.pre">Jucatori</span> <span data-i18n="players.title.span">legendari</span></h2>
+      <p class="section-sub" data-i18n="players.sub">Plimba mouse-ul peste oricare jucator si apoi click pentru a-i vedea profilul complet. Efectul "fisheye" — cel mai apropiat se mareste, ceilalti se intuneca.</p>
+
+      <!-- DOCK FISHEYE -->
+      <div class="dock-wrap">
+        <div class="dock-hint" data-i18n="players.hint">Mouse <span>aproape</span> = jucatorul devine <span>mare</span>. Click pentru detalii.</div>
+        <div class="dock" data-active="0" id="players-dock">
+          <div class="dock-item" data-player='{
+            "first":"Michael","last":"Jordan","name":"Michael Jordan","num":"23",
+            "tag":"The GOAT","team":"CHICAGO BULLS","nick":"His Airness • #23",
+            "bio":"Considerat de majoritatea cel mai mare jucator de baschet din toate timpurile. 6 titluri NBA, 5x MVP, 6x Finals MVP — fiecare finala in care a jucat a fost castigata. A globalizat baschetul si a definit ce inseamna pasiune si munca.",
+            "bg":"#3a0510","bg2":"#1a0008","accent":"#FDC435","glow":"rgba(253,196,53,.3)",
+            "stats":[
+              {"value":"6","label":"Titluri"},
+              {"value":"5","label":"MVP"},
+              {"value":"30.1","label":"PPG"},
+              {"value":"32K+","label":"Puncte"}
+            ]
+          }'>
+            <img src="../images/p-jordan-head.png" alt="Jordan">
+            <span class="dock-label">Jordan #23</span>
+          </div>
+
+          <div class="dock-item" data-player='{
+            "first":"LeBron","last":"James","name":"LeBron James","num":"23",
+            "tag":"King James","team":"CAVS / HEAT / LAKERS","nick":"The Chosen One • #23",
+            "bio":"Cel mai bun marcator din istoria NBA cu peste 40.000 de puncte. 4 titluri NBA cu trei echipe diferite. Inca activ la peste 39 de ani — un fenomen de longevitate si performanta in acelasi timp.",
+            "bg":"#1a0008","bg2":"#0a0004","accent":"#FDB927","glow":"rgba(253,185,39,.3)",
+            "stats":[
+              {"value":"4","label":"Titluri"},
+              {"value":"4","label":"MVP"},
+              {"value":"27.1","label":"PPG"},
+              {"value":"40K+","label":"Puncte"}
+            ]
+          }'>
+            <img src="../images/p-lebron.png" alt="LeBron" style="object-position:center 10%;">
+            <span class="dock-label">LeBron #23</span>
+          </div>
+
+          <div class="dock-item" data-player='{
+            "first":"Kobe","last":"Bryant","name":"Kobe Bryant","num":"24",
+            "tag":"Black Mamba","team":"L.A. LAKERS","nick":"Mamba Mentality • #8 / #24",
+            "bio":"5 titluri NBA, 18x All-Star, considerat unul dintre cei mai talentati si dedicati jucatori din istorie. \"Mamba Mentality\" este o filosofie de munca care a inspirat o generatie. A jucat toata cariera la Lakers.",
+            "bg":"#1a0a3a","bg2":"#0a0420","accent":"#FDB927","glow":"rgba(253,185,39,.3)",
+            "stats":[
+              {"value":"5","label":"Titluri"},
+              {"value":"1","label":"MVP"},
+              {"value":"25.0","label":"PPG"},
+              {"value":"33K+","label":"Puncte"}
+            ]
+          }'>
+            <img src="../images/p-kobe-head.png" alt="Kobe">
+            <span class="dock-label">Kobe #24</span>
+          </div>
+
+          <div class="dock-item" data-player='{
+            "first":"Stephen","last":"Curry","name":"Stephen Curry","num":"30",
+            "tag":"Sharpshooter","team":"GOLDEN STATE WARRIORS","nick":"Chef Curry • #30",
+            "bio":"Cel mai mare aruncator de 3 puncte din istoria NBA. A revolutionat sportul prin perfectionarea aruncarii de la distanta. 4 titluri NBA, 2x MVP (inclusiv primul MVP unanim din istorie in 2016).",
+            "bg":"#0a1c44","bg2":"#040a20","accent":"#FDB927","glow":"rgba(253,185,39,.3)",
+            "stats":[
+              {"value":"4","label":"Titluri"},
+              {"value":"2","label":"MVP"},
+              {"value":"24.8","label":"PPG"},
+              {"value":"3800+","label":"3P-uri"}
+            ]
+          }'>
+            <img src="../images/p-curry-head.png" alt="Curry">
+            <span class="dock-label">Curry #30</span>
+          </div>
+
+          <div class="dock-item" data-player='{
+            "first":"Victor","last":"Wembanyama","name":"Victor Wembanyama","num":"1",
+            "tag":"Generational Talent","team":"SAN ANTONIO SPURS","nick":"Wemby • 2.24m",
+            "bio":"Frantuzul de 2.24m, ales nr. 1 in NBA Draft 2023. Rookie of the Year. Combinatia unica de inaltime, atletism si abilitati tehnice (aruncare, dribling) il fac viitorul liga NBA.",
+            "bg":"#1a1a1a","bg2":"#000","accent":"#C4CED4","glow":"rgba(200,200,200,.25)",
+            "stats":[
+              {"value":"0","label":"Titluri"},
+              {"value":"1","label":"ROY"},
+              {"value":"21.4","label":"PPG"},
+              {"value":"3.6","label":"BPG"}
+            ]
+          }'>
+            <img src="../images/p-wemby-head.png" alt="Wemby">
+            <span class="dock-label">Wemby #1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOCUS PANEL — populated by JS based on selected dock item -->
+      <div class="player-focus" data-player-focus data-dock-sel="#players-dock"></div>
+
+    </section>
+
+    <!-- ALL-TIME LEGENDS — alti jucatori -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="players.legends.title.pre">All-Time</span> <span data-i18n="players.legends.title.span">legends</span> & superstars</h2>
+      <p class="section-sub" data-i18n="players.legends.sub">Alti jucatori care au scris istoria baschetului — clasici si superstars actuali.</p>
+
+      <div class="cards-grid" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));">
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #FDB927, #552583); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-magic.png" alt="Magic Johnson" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Magic Johnson</h3>
+            <p>Point guard de 2.06m, 5 titluri cu Lakers in anii '80. "Showtime" era.</p>
+            <span class="badge">5 titluri</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #007A33, #003318); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-bird.png" alt="Larry Bird" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Larry Bird</h3>
+            <p>3x MVP consecutiv (84-86) cu Boston Celtics. Rivalul lui Magic.</p>
+            <span class="badge">3 titluri</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #FDB927, #552583); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-kareem.png" alt="Kareem" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Kareem Abdul-Jabbar</h3>
+            <p>Sky-hook si 38.387 puncte — al 2-lea total din istorie. 6 titluri.</p>
+            <span class="badge">6 titluri</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #FDB927, #552583); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-shaq.png" alt="Shaq" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Shaquille O'Neal</h3>
+            <p>Center dominator. 4 titluri NBA (3 cu Lakers, 1 cu Heat).</p>
+            <span class="badge">4 titluri</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #C4CED4, #000); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-duncan.png" alt="Duncan" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Tim Duncan</h3>
+            <p>"The Big Fundamental" — 5 titluri cu Spurs, 2x MVP, 3x Finals MVP.</p>
+            <span class="badge">5 titluri</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #002B5C, #C4CED4); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-iverson.png" alt="Iverson" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Allen Iverson</h3>
+            <p>"The Answer" — 1.83m care a schimbat NBA-ul. MVP 2001 cu 76ers.</p>
+            <span class="badge">11x All-Star</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #00471B, #EEE1C6); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-giannis.png" alt="Giannis" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Giannis Antetokounmpo</h3>
+            <p>"Greek Freak" — 2x MVP, titlu cu Bucks 2021, monstru fizic.</p>
+            <span class="badge">1 titlu</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #5F259F, #1D1160); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-durant.png" alt="Durant" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Kevin Durant</h3>
+            <p>"Easy Money" — unul dintre cei mai eficienti marcatori din istorie.</p>
+            <span class="badge">2 titluri</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #552583, #FDB927); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-doncic.png" alt="Doncic" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Luka Doncic</h3>
+            <p>Sloven prodigy, MVP candidate la 25 de ani. Step-back de top.</p>
+            <span class="badge">5x All-Star</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #0E2240, #FEC524); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-jokic.png" alt="Jokic" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Nikola Jokic</h3>
+            <p>3x MVP, titlu cu Nuggets 2023. Center european cu skill de PG.</p>
+            <span class="badge">1 titlu</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #007A33, #BA9653); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-tatum.png" alt="Tatum" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Jayson Tatum</h3>
+            <p>Steaua noii ere Celtics — titlu NBA 2024, 4x All-NBA.</p>
+            <span class="badge">1 titlu</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="height:240px; background:linear-gradient(135deg, #006BB6, #ED174C); display:flex; align-items:flex-end; justify-content:center;">
+            <img src="../images/p-embiid.png" alt="Embiid" style="height:230px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.6));">
+          </div>
+          <div class="card-body">
+            <h3>Joel Embiid</h3>
+            <p>Center cameruno-francez, MVP 2023 cu Philadelphia 76ers.</p>
+            <span class="badge">1 MVP</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Basketball World</h4>
+        <p>Site dedicat pasionatilor de baschet din intreaga lume.</p>
+        <div class="socials"><a href="#">f</a><a href="#">IG</a><a href="#">X</a><a href="#">YT</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Linkuri rapide</h4>
+        <ul>
+          <li><a href="../index.html">Acasa</a></li>
+          <li><a href="echipe.html">Echipe</a></li>
+          <li><a href="jucatori.html">Jucatori</a></li>
+          <li><a href="istorie.html">Istorie</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resurse</h4>
+        <ul>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="multimedia.html">Baza de date NBA</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Madison Square Garden, New York</p>
+        <p>contact@basketballworld.com</p>
+        <p>+1 212 465 6741</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span data-current-year></span> Basketball World — proiect informatica.</div>
+  </footer>
+
+  <script src="../js/translations.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

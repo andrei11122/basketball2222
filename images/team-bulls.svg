@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="bu" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#ff5252"/>
+      <stop offset="55%" stop-color="#CE1141"/>
+      <stop offset="100%" stop-color="#5a0820"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#bu)"/>
+  <!-- Stylized bull head -->
+  <g transform="translate(100 100)" fill="#fff">
+    <!-- horns -->
+    <path d="M-55 -10 Q -75 -30 -65 -45 Q -50 -35 -42 -15 Z"/>
+    <path d="M55 -10 Q 75 -30 65 -45 Q 50 -35 42 -15 Z"/>
+    <!-- head -->
+    <ellipse cx="0" cy="0" rx="40" ry="35"/>
+    <!-- snout -->
+    <ellipse cx="0" cy="18" rx="22" ry="14"/>
+    <!-- eyes -->
+    <circle cx="-15" cy="-5" r="4" fill="#CE1141"/>
+    <circle cx="15" cy="-5" r="4" fill="#CE1141"/>
+    <!-- nostrils -->
+    <ellipse cx="-7" cy="20" rx="2.5" ry="3" fill="#CE1141"/>
+    <ellipse cx="7" cy="20" rx="2.5" ry="3" fill="#CE1141"/>
+  </g>
+  <text x="100" y="195" font-family="Impact, sans-serif" font-size="22" fill="#fff" text-anchor="middle" letter-spacing="3">BULLS</text>
+</svg>

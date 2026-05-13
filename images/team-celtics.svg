@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="ce" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#5cd187"/>
+      <stop offset="55%" stop-color="#007A33"/>
+      <stop offset="100%" stop-color="#003318"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#ce)"/>
+  <!-- Shamrock -->
+  <g transform="translate(100 95)">
+    <circle cx="0" cy="-22" r="20" fill="#fff"/>
+    <circle cx="-22" cy="0" r="20" fill="#fff"/>
+    <circle cx="22" cy="0" r="20" fill="#fff"/>
+    <circle cx="0" cy="22" r="20" fill="#fff"/>
+    <path d="M0 20 Q -4 35 -10 45" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="6" fill="#007A33"/>
+  </g>
+  <text x="100" y="195" font-family="Impact, sans-serif" font-size="22" fill="#fff" text-anchor="middle" letter-spacing="3">CELTICS</text>
+</svg>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie — Basketball World</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="page-loader"><div class="ball-loader"></div></div>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="../index.html" class="logo"><img src="../images/logo.svg" alt="logo"> Basketball <span>World</span></a>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Acasa</a></li>
+        <li><a href="echipe.html">Echipe</a></li>
+        <li><a href="jucatori.html">Jucatori</a></li>
+        <li><a href="istorie.html">Istorie</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="multimedia.html">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta" data-auth="login">Login</a></li>
+        <li><a href="#" class="nav-cta" data-auth="account" style="display:none">Cont</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+      <div class="nav-backdrop"></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="gal.title.pre">Galerie</span> <span data-i18n="gal.title.span">foto</span></h2>
+      <p class="section-sub" data-i18n="gal.sub">Featured-uri mari sus, apoi un layout masonry mai jos. Treci cu mouse-ul peste orice imagine.</p>
+
+      <!-- HERO featured grid (2x3 layout with one big feature) -->
+      <div class="gallery-hero">
+        <a class="gh-cell feature" href="#" style="background-image:linear-gradient(135deg, rgba(206,17,65,.4), rgba(0,0,0,.3));">
+          <img src="../images/p-jordan.png" alt="Jordan" style="background:linear-gradient(135deg, #CE1141, #1a0008); object-fit:contain;">
+          <div class="gh-label">
+            <strong>Michael Jordan — #23</strong>
+            <span>The GOAT • 6x NBA Champion</span>
+          </div>
+        </a>
+
+        <a class="gh-cell" href="#">
+          <img src="../images/dunk.jpg" alt="Dunk">
+          <div class="gh-label">
+            <strong>Dunk dramatic</strong>
+            <span>Lumina dintr-o singura sursa</span>
+          </div>
+        </a>
+
+        <a class="gh-cell" href="#">
+          <img src="../images/p-kobe.png" alt="Kobe" style="background:linear-gradient(135deg, #552583, #1a0a3a); object-fit:contain;">
+          <div class="gh-label">
+            <strong>Kobe Bryant</strong>
+            <span>#24 — Mamba Forever</span>
+          </div>
+        </a>
+
+        <a class="gh-cell" href="#">
+          <img src="../images/court.jpg" alt="Court">
+          <div class="gh-label">
+            <strong>Arena Madison Sq</strong>
+            <span>Casa Knicks, NY</span>
+          </div>
+        </a>
+
+        <a class="gh-cell" href="#">
+          <img src="../images/p-curry.png" alt="Curry" style="background:linear-gradient(135deg, #1D428A, #0a1c44); object-fit:contain;">
+          <div class="gh-label">
+            <strong>Stephen Curry</strong>
+            <span>#30 — King of 3P</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- FILTERS + MASONRY -->
+      <h3 style="text-align:center; font-size:1.6rem; margin-top:60px; color:var(--orange-light); letter-spacing:2px;" data-i18n="gal.allPhotos">Toate fotografiile</h3>
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all" data-i18n="gal.filter.all">Toate</button>
+        <button class="filter-btn" data-filter="jucatori" data-i18n="gal.filter.players">Jucatori</button>
+        <button class="filter-btn" data-filter="actiune" data-i18n="gal.filter.action">Actiune</button>
+        <button class="filter-btn" data-filter="terenuri" data-i18n="gal.filter.courts">Terenuri</button>
+        <button class="filter-btn" data-filter="minge" data-i18n="gal.filter.ball">Mingea</button>
+      </div>
+
+      <div class="masonry">
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #1a0008, #4a0014);">
+          <img src="../images/p-lebron.png" alt="LeBron">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>LeBron James</strong><span>King James — all-time scorer</span></div>
+        </div>
+
+        <div class="gv-item wide" data-cat="actiune">
+          <img src="../images/player_dunk.jpg" alt="">
+          <span class="gv-cat-tag">Actiune</span>
+          <div class="gv-caption"><strong>Slam outdoor</strong><span>Pe un teren cu palmieri</span></div>
+        </div>
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #1a1a1a, #000);">
+          <img src="../images/p-wemby.png" alt="Wemby">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>Victor Wembanyama</strong><span>#1 — viitorul NBA</span></div>
+        </div>
+
+        <div class="gv-item square" data-cat="minge">
+          <img src="../images/ball.jpg" alt="">
+          <span class="gv-cat-tag">Mingea</span>
+          <div class="gv-caption"><strong>Spalding Collection</strong><span>Mingi NBA oficiale</span></div>
+        </div>
+
+        <div class="gv-item wide" data-cat="actiune">
+          <img src="../images/player2.jpg" alt="">
+          <span class="gv-cat-tag">Actiune</span>
+          <div class="gv-caption"><strong>Dunk in arena</strong><span>Saritura spectaculoasa</span></div>
+        </div>
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #00471B, #003318);">
+          <img src="../images/p-giannis.png" alt="Giannis">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>Giannis Antetokounmpo</strong><span>Greek Freak — MVP 2019/20</span></div>
+        </div>
+
+        <div class="gv-item square" data-cat="terenuri">
+          <img src="../images/hero.jpg" alt="">
+          <span class="gv-cat-tag">Teren</span>
+          <div class="gv-caption"><strong>Hoop arena</strong><span>Plasa si fanii in fundal</span></div>
+        </div>
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #5F259F, #1D1160);">
+          <img src="../images/p-durant.png" alt="Durant">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>Kevin Durant</strong><span>2x NBA Champion</span></div>
+        </div>
+
+        <div class="gv-item wide" data-cat="terenuri">
+          <img src="../images/court_game.jpg" alt="">
+          <span class="gv-cat-tag">Teren</span>
+          <div class="gv-caption"><strong>Streetball</strong><span>Joc pe litoral</span></div>
+        </div>
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #0E2240, #FEC524);">
+          <img src="../images/p-jokic.png" alt="Jokic">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>Nikola Jokic</strong><span>3x MVP — Nuggets</span></div>
+        </div>
+
+        <div class="gv-item square" data-cat="minge">
+          <img src="../images/hoop_ball.jpg" alt="">
+          <span class="gv-cat-tag">Mingea</span>
+          <div class="gv-caption"><strong>Mingea in cos</strong><span>Momentul exact</span></div>
+        </div>
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #552583, #FDB927);">
+          <img src="../images/p-doncic.png" alt="Doncic">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>Luka Doncic</strong><span>Sloven prodigy</span></div>
+        </div>
+
+        <div class="gv-item square" data-cat="minge">
+          <img src="../images/gallery2.jpg" alt="">
+          <span class="gv-cat-tag">Mingea</span>
+          <div class="gv-caption"><strong>NBA pe asfalt</strong><span>Mingea oficiala pe ud</span></div>
+        </div>
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #FDB927, #552583);">
+          <img src="../images/p-magic.png" alt="Magic">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>Magic Johnson</strong><span>5x NBA Champion — Showtime</span></div>
+        </div>
+
+        <div class="gv-item wide" data-cat="terenuri">
+          <img src="../images/history.jpg" alt="">
+          <span class="gv-cat-tag">Teren</span>
+          <div class="gv-caption"><strong>Cosul si plasa</strong><span>Detaliul iconic</span></div>
+        </div>
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #007A33, #003318);">
+          <img src="../images/p-bird.png" alt="Bird">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>Larry Bird</strong><span>3x MVP — Celtics</span></div>
+        </div>
+
+        <div class="gv-item square" data-cat="actiune">
+          <img src="../images/player_game.jpg" alt="">
+          <span class="gv-cat-tag">Actiune</span>
+          <div class="gv-caption"><strong>Meci in desfasurare</strong><span>Mingea in prim-plan</span></div>
+        </div>
+
+        <div class="gv-item tall" data-cat="jucatori" style="background:linear-gradient(135deg, #002B5C, #C4CED4);">
+          <img src="../images/p-iverson.png" alt="Iverson">
+          <span class="gv-cat-tag">Jucator</span>
+          <div class="gv-caption"><strong>Allen Iverson</strong><span>The Answer — 76ers</span></div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Basketball World</h4>
+        <p>Site dedicat pasionatilor de baschet din intreaga lume.</p>
+        <div class="socials"><a href="#">f</a><a href="#">IG</a><a href="#">X</a><a href="#">YT</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Linkuri rapide</h4>
+        <ul>
+          <li><a href="../index.html">Acasa</a></li>
+          <li><a href="echipe.html">Echipe</a></li>
+          <li><a href="jucatori.html">Jucatori</a></li>
+          <li><a href="istorie.html">Istorie</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resurse</h4>
+        <ul>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="multimedia.html">Baza de date NBA</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Madison Square Garden, New York</p>
+        <p>contact@basketballworld.com</p>
+        <p>+1 212 465 6741</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span data-current-year></span> Basketball World — proiect informatica.</div>
+  </footer>
+
+  <div class="lightbox"><img alt="preview"></div>
+
+  <script src="../js/translations.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

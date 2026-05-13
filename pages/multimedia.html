@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baza de date NBA — Basketball World</title>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="page-loader"><div class="ball-loader"></div></div>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="../index.html" class="logo"><img src="../images/logo.svg" alt="logo"> Basketball <span>World</span></a>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Acasa</a></li>
+        <li><a href="echipe.html">Echipe</a></li>
+        <li><a href="jucatori.html">Jucatori</a></li>
+        <li><a href="istorie.html">Istorie</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="multimedia.html">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="nav-cta" data-auth="login">Login</a></li>
+        <li><a href="#" class="nav-cta" data-auth="account" style="display:none">Cont</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
+      <div class="nav-backdrop"></div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== LIVE API SEARCH ===== -->
+    <section class="section">
+      <div style="text-align:center; margin-bottom:20px;">
+        <span class="live-badge" data-i18n="media.live">API live · TheSportsDB</span>
+      </div>
+      <h2 class="section-title"><span data-i18n="media.search.title.pre">Cauta orice</span> <span data-i18n="media.search.title.span">jucator NBA</span></h2>
+      <p class="section-sub" data-i18n="media.search.sub">Date in timp real prin API-ul TheSportsDB — scrie un nume si vezi profilul + poza imediat.</p>
+
+      <div class="api-search">
+        <input type="text" id="player-search" placeholder="Scrie numele unui jucator (ex: LeBron James)..." autocomplete="off" data-i18n-attr="placeholder:media.search.placeholder">
+      </div>
+
+      <div id="api-results" class="api-results">
+        <div class="api-status">Scrie un nume mai sus pentru a cauta in baza de date NBA...</div>
+      </div>
+    </section>
+
+    <!-- ===== YOUTUBE PLAYLISTS — direct links (NBA blochează embed extern) ===== -->
+    <section class="section">
+      <div style="text-align:center; margin-bottom:20px;">
+        <span class="live-badge" style="background:rgba(255,0,0,.15); border-color:#ff3333; color:#ff8a7e;">YouTube · NBA Official</span>
+      </div>
+      <h2 class="section-title"><span data-i18n="media.yt.title.pre">Highlights</span> <span data-i18n="media.yt.title.span">YouTube</span></h2>
+      <p class="section-sub" data-i18n="media.yt.sub">Categorii YouTube oficiale NBA — click pentru a vedea clipuri direct pe YouTube. NBA nu permite embed extern, dar linkurile merg.</p>
+
+      <div class="cards-grid" style="grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));">
+
+        <a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/@NBA/videos">
+          <div class="card-img" style="background:linear-gradient(135deg, #c1071b, #1a0008); display:flex; align-items:center; justify-content:center; height:180px;">
+            <span style="font-family:var(--font-display); font-size:5rem; color:#fff; letter-spacing:3px;">NBA</span>
+          </div>
+          <div class="card-body">
+            <h3>Canal oficial NBA</h3>
+            <p>Cele mai noi clipuri si highlights de la NBA — meciuri din sezon, top 10 plays, interviuri.</p>
+            <span class="card-link">▶ Deschide canalul</span>
+          </div>
+        </a>
+
+        <a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=NBA+playoffs+2025+highlights">
+          <div class="card-img" style="background:linear-gradient(135deg, #e8551f, #8a2a06); display:flex; align-items:center; justify-content:center; height:180px;">
+            <span style="font-family:var(--font-display); font-size:2.6rem; color:#fff; letter-spacing:3px;">PLAYOFFS</span>
+          </div>
+          <div class="card-body">
+            <h3>Playoffs actuale</h3>
+            <p>Cele mai recente meciuri din playoffs — serii, momente decisive, comebacks.</p>
+            <span class="card-link">▶ Vezi playoffs</span>
+          </div>
+        </a>
+
+        <a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=NBA+top+10+plays+of+the+night">
+          <div class="card-img" style="background:linear-gradient(135deg, #FDB927, #b8860b); display:flex; align-items:center; justify-content:center; height:180px;">
+            <span style="font-family:var(--font-display); font-size:3.6rem; color:#1a1a1a; letter-spacing:3px;">TOP 10</span>
+          </div>
+          <div class="card-body">
+            <h3>Top 10 Plays of the Night</h3>
+            <p>Selectia zilnica oficiala NBA cu cele mai spectaculoase 10 momente din ziua respectiva.</p>
+            <span class="card-link">▶ Vezi top 10</span>
+          </div>
+        </a>
+
+        <a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=NBA+best+dunks+all+time">
+          <div class="card-img" style="background:linear-gradient(135deg, #1D428A, #0a1c44); display:flex; align-items:center; justify-content:center; height:180px;">
+            <span style="font-family:var(--font-display); font-size:3rem; color:#fff; letter-spacing:3px;">DUNKS</span>
+          </div>
+          <div class="card-body">
+            <h3>Best dunks all-time</h3>
+            <p>Compilatie cu cele mai impresionante dunk-uri din istorie. Jordan, Wilkins, Carter, LeBron.</p>
+            <span class="card-link">▶ Vezi dunks</span>
+          </div>
+        </a>
+
+        <a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=NBA+buzzer+beaters+game+winners">
+          <div class="card-img" style="background:linear-gradient(135deg, #007A33, #003318); display:flex; align-items:center; justify-content:center; height:180px;">
+            <span style="font-family:var(--font-display); font-size:2.6rem; color:#fff; letter-spacing:3px;">BUZZER</span>
+          </div>
+          <div class="card-body">
+            <h3>Buzzer beaters</h3>
+            <p>Cosuri marcate exact pe sirena — momentele cele mai dramatice din istoria NBA.</p>
+            <span class="card-link">▶ Vezi buzzer</span>
+          </div>
+        </a>
+
+        <a class="card" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=NBA+Finals+best+moments+history">
+          <div class="card-img" style="background:linear-gradient(135deg, #FDC435, #8a5a00); display:flex; align-items:center; justify-content:center; height:180px;">
+            <span style="font-family:var(--font-display); font-size:5rem; color:#fff;">🏆</span>
+          </div>
+          <div class="card-body">
+            <h3>Finale NBA — best moments</h3>
+            <p>Cele mai memorabile faze din finalele NBA. Jordan, Magic, Bird, Kobe, LeBron, Curry.</p>
+            <span class="card-link">▶ Vezi finale</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div style="text-align:center; margin-top:30px;">
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.youtube.com/@NBA" data-i18n="media.yt.btn">Deschide canalul NBA</a>
+      </div>
+    </section>
+
+    <!-- ===== FAMOUS MOMENTS — search links ===== -->
+    <section class="section">
+      <h2 class="section-title">Momente <span>celebre</span></h2>
+      <p class="section-sub">Cele mai dramatice momente din istoria NBA — click pe oricare ca sa vezi clipul pe YouTube.</p>
+
+      <div class="cards-grid" style="grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));">
+
+        <article class="card">
+          <div class="card-img" style="background:linear-gradient(135deg, #CE1141, #1a0008); display:flex; align-items:flex-end; justify-content:center; height:280px;">
+            <img src="../images/p-jordan.png" alt="Jordan" style="height:280px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.7));">
+          </div>
+          <div class="card-body">
+            <h3>The Last Shot — 1998</h3>
+            <p>Michael Jordan, Game 6 Finals vs Jazz. Pucat decisiv peste Bryon Russell la 5.2 secunde. Ultimul titlu Bulls.</p>
+            <a href="https://www.youtube.com/results?search_query=Michael+Jordan+The+Last+Shot+1998+NBA+Finals" target="_blank" rel="noopener" class="card-link">▶ Vezi pe YouTube</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background:linear-gradient(135deg, #007A33, #003318); display:flex; align-items:flex-end; justify-content:center; height:280px;">
+            <img src="../images/p-rayallen-head.png" alt="Ray Allen" style="height:280px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.7));">
+          </div>
+          <div class="card-body">
+            <h3>Ray Allen 3 — 2013</h3>
+            <p>Game 6 Finals, Heat vs Spurs. Ray Allen tripleaza din colt cu 5.2 secunde de final — meciul se duce in overtime, Heat castiga titlul.</p>
+            <a href="https://www.youtube.com/results?search_query=Ray+Allen+Three+Pointer+2013+NBA+Finals+Game+6" target="_blank" rel="noopener" class="card-link">▶ Vezi pe YouTube</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background:linear-gradient(135deg, #860038, #1a0008); display:flex; align-items:flex-end; justify-content:center; height:280px;">
+            <img src="../images/p-lebron.png" alt="LeBron Block" style="height:280px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.7));">
+          </div>
+          <div class="card-body">
+            <h3>The Block — 2016</h3>
+            <p>LeBron James in Game 7 Finals, contra Warriors. Block memorabil pe Andre Iguodala. Cavs castiga titlul dupa ce au fost 1-3.</p>
+            <a href="https://www.youtube.com/results?search_query=LeBron+James+The+Block+2016+NBA+Finals+Game+7" target="_blank" rel="noopener" class="card-link">▶ Vezi pe YouTube</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background:linear-gradient(135deg, #1D428A, #0a1c44); display:flex; align-items:flex-end; justify-content:center; height:280px;">
+            <img src="../images/p-curry.png" alt="Curry 13 3s" style="height:280px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.7));">
+          </div>
+          <div class="card-body">
+            <h3>Curry 13×3-pointers — 2016</h3>
+            <p>Stephen Curry stabileste record NBA cu 13 triple intr-un singur meci, vs Pelicans. Demonstratie de baschet la cel mai inalt nivel.</p>
+            <a href="https://www.youtube.com/results?search_query=Stephen+Curry+13+three+pointers+record+game" target="_blank" rel="noopener" class="card-link">▶ Vezi pe YouTube</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background:linear-gradient(135deg, #552583, #1a0a3a); display:flex; align-items:flex-end; justify-content:center; height:280px;">
+            <img src="../images/p-kobe.png" alt="Kobe 81" style="height:280px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.7));">
+          </div>
+          <div class="card-body">
+            <h3>Kobe 81 puncte — 2006</h3>
+            <p>Kobe Bryant inscrie 81 de puncte vs Toronto — al doilea total individual din istoria NBA, dupa cele 100 ale lui Chamberlain.</p>
+            <a href="https://www.youtube.com/results?search_query=Kobe+Bryant+81+points+game+Toronto+2006" target="_blank" rel="noopener" class="card-link">▶ Vezi pe YouTube</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" style="background:linear-gradient(135deg, #1a1a1a, #000); display:flex; align-items:flex-end; justify-content:center; height:280px;">
+            <img src="../images/p-wemby.png" alt="Wemby" style="height:280px; filter:drop-shadow(0 10px 24px rgba(0,0,0,.7));">
+          </div>
+          <div class="card-body">
+            <h3>Wembanyama 5×5 — 2024</h3>
+            <p>Victor Wembanyama, primul rookie cu 5 blocuri si 5 steluri intr-un meci. Generational talent in actiune.</p>
+            <a href="https://www.youtube.com/results?search_query=Victor+Wembanyama+5x5+rookie+game" target="_blank" rel="noopener" class="card-link">▶ Vezi pe YouTube</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== HARDCODED DATABASE — FINALE NBA ===== -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="media.db.title.pre">Finale</span> <span data-i18n="media.db.title.span">NBA</span> <span data-i18n="media.db.title.post">legendare</span></h2>
+      <p class="section-sub" data-i18n="media.db.sub">15+ meciuri istorice salvate intern in <code>data/games.js</code>. Filtreaza dupa deceniu.</p>
+
+      <div class="games-controls">
+        <button class="year-btn active" data-year="all">Toate</button>
+        <button class="year-btn" data-year="90s">Anii '90</button>
+        <button class="year-btn" data-year="2000s">Anii 2000</button>
+        <button class="year-btn" data-year="2010s">Anii 2010</button>
+        <button class="year-btn" data-year="2020s">Anii 2020</button>
+      </div>
+
+      <div id="games-container" class="games-grid">
+        <p style="color:var(--gray); grid-column:1/-1; text-align:center;">Se incarca baza de date...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Basketball World</h4>
+        <p>Site dedicat pasionatilor de baschet din intreaga lume.</p>
+        <div class="socials"><a href="#">f</a><a href="#">IG</a><a href="#">X</a><a href="#">YT</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Linkuri rapide</h4>
+        <ul>
+          <li><a href="../index.html">Acasa</a></li>
+          <li><a href="echipe.html">Echipe</a></li>
+          <li><a href="jucatori.html">Jucatori</a></li>
+          <li><a href="istorie.html">Istorie</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resurse</h4>
+        <ul>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="multimedia.html">Baza de date NBA</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Madison Square Garden, New York</p>
+        <p>contact@basketballworld.com</p>
+        <p>+1 212 465 6741</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span data-current-year></span> Basketball World — proiect informatica.</div>
+  </footer>
+
+  <!-- API search via TheSportsDB (free, no key) -->
+  <script>
+    (function () {
+      const input = document.getElementById('player-search');
+      const out   = document.getElementById('api-results');
+      if (!input || !out) return;
+
+      let debounceTimer = null;
+      let activeReq = 0;
+
+      function setStatus(msg, isError) {
+        out.innerHTML = `<div class="api-status${isError ? ' error' : ''}">${msg}</div>`;
+      }
+
+      async function search(name) {
+        const reqId = ++activeReq;
+        setStatus(`Caut "${name}"...`);
+        try {
+          const url = 'https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=' + encodeURIComponent(name);
+          const res = await fetch(url);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          if (reqId !== activeReq) return;
+          if (!data.player || !data.player.length) {
+            setStatus(`Niciun jucator gasit pentru "${name}". Incearca un alt nume.`);
+            return;
+          }
+          let players = data.player.filter(p => (p.strSport || '').toLowerCase() === 'basketball');
+          if (!players.length) players = data.player;
+          renderPlayers(players);
+        } catch (err) {
+          if (reqId !== activeReq) return;
+          setStatus('Eroare la API: ' + err.message + '. Verifica conexiunea la internet.', true);
+        }
+      }
+
+      function renderPlayers(players) {
+        const html = players.slice(0, 12).map(p => {
+          const img = p.strCutout || p.strThumb || '';
+          const name = p.strPlayer || '—';
+          const team = p.strTeam || '—';
+          const position = p.strPosition || '';
+          const country = p.strNationality || '';
+          const born = p.dateBorn || '';
+          return `
+            <article class="api-card">
+              ${img
+                ? `<div class="pic"><img src="${img}" alt="${name}"></div>`
+                : `<div class="pic no-img">🏀</div>`}
+              <div class="info">
+                <h4>${name}</h4>
+                ${position ? `<p>${position}</p>` : ''}
+                ${country  ? `<p>🌍 ${country}</p>`  : ''}
+                ${born     ? `<p>📅 ${born}</p>`     : ''}
+                <span class="api-team">${team}</span>
+              </div>
+            </article>
+          `;
+        }).join('');
+        out.innerHTML = html;
+      }
+
+      input.addEventListener('input', () => {
+        const val = input.value.trim();
+        clearTimeout(debounceTimer);
+        if (val.length < 2) {
+          setStatus('Scrie cel putin 2 litere...');
+          return;
+        }
+        debounceTimer = setTimeout(() => search(val.replace(/\s+/g, '_')), 350);
+      });
+
+      input.value = 'LeBron James';
+      search('LeBron_James');
+    })();
+  </script>
+
+  <!-- Games database from data/games.js -->
+  <script src="../data/games.js"></script>
+  <script>
+    (function () {
+      const wrap = document.getElementById('games-container');
+      if (!wrap || !window.NBA_GAMES) return;
+
+      function render(list) {
+        if (!list.length) {
+          wrap.innerHTML = '<p style="color:var(--gray); grid-column:1/-1; text-align:center;">Nu s-au gasit meciuri.</p>';
+          return;
+        }
+        wrap.innerHTML = list.map(g => {
+          const q = encodeURIComponent(g.year + ' NBA ' + g.stage.split(' ')[0] + ' ' + g.t1.name + ' ' + g.t2.name + ' highlights');
+          return `
+          <article class="game-card" data-year="${g.decade}">
+            <div class="game-meta">
+              <span class="game-stage">${g.stage}</span>
+              <span class="game-date">${g.date}</span>
+            </div>
+            <div class="game-teams">
+              <div class="game-team ${g.t1.w ? 'winner' : ''}">
+                <strong>${g.t1.name}</strong>
+                <span class="score">${g.t1.score}</span>
+              </div>
+              <div class="vs">VS</div>
+              <div class="game-team ${g.t2.w ? 'winner' : ''}">
+                <strong>${g.t2.name}</strong>
+                <span class="score">${g.t2.score}</span>
+              </div>
+            </div>
+            <div class="game-mvp">
+              <strong>MVP:</strong> ${g.mvp}
+              <p class="game-highlight">${g.note}</p>
+              <a href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener" style="display:inline-block; margin-top:10px; color:var(--orange); font-weight:600; font-size:.85rem; letter-spacing:1px;">▶ Vezi highlights pe YouTube</a>
+            </div>
+          </article>
+        `;}).join('');
+      }
+
+      const sorted = [...window.NBA_GAMES].sort((a,b) => b.year - a.year);
+      render(sorted);
+
+      document.querySelectorAll('.year-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const y = btn.dataset.year;
+          render(y === 'all' ? sorted : sorted.filter(g => g.decade === y));
+        });
+      });
+    })();
+  </script>
+  <script src="../js/translations.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

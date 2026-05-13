@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="wa" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#FDB927"/>
+      <stop offset="55%" stop-color="#1D428A"/>
+      <stop offset="100%" stop-color="#0a1c44"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#wa)"/>
+  <!-- Stylized Golden Gate Bridge -->
+  <g transform="translate(100 110)">
+    <!-- bridge deck -->
+    <line x1="-70" y1="0" x2="70" y2="0" stroke="#FDB927" stroke-width="4"/>
+    <!-- towers -->
+    <rect x="-35" y="-45" width="6" height="50" fill="#FDB927"/>
+    <rect x="29" y="-45" width="6" height="50" fill="#FDB927"/>
+    <!-- cables -->
+    <path d="M-70 -10 Q -32 -50 0 -25 Q 32 -50 70 -10" stroke="#FDB927" stroke-width="3" fill="none"/>
+    <!-- water lines -->
+    <line x1="-60" y1="15" x2="60" y2="15" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+    <line x1="-50" y1="22" x2="50" y2="22" stroke="#fff" stroke-width="1.5" opacity=".4"/>
+  </g>
+  <text x="100" y="50" font-family="Impact, sans-serif" font-size="20" fill="#FDB927" text-anchor="middle" letter-spacing="2">THE BAY</text>
+  <text x="100" y="195" font-family="Impact, sans-serif" font-size="22" fill="#FDB927" text-anchor="middle" letter-spacing="3">WARRIORS</text>
+</svg>

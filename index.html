@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Basketball World — universul baschetului: echipe, jucatori, istorie, galerie si baza de date NBA cu API live.">
+  <title>Basketball World — Pagina principala</title>
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="page-loader"><div class="ball-loader"></div></div>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="Basketball World logo">
+        Basketball <span>World</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html">Acasa</a></li>
+        <li><a href="pages/echipe.html">Echipe</a></li>
+        <li><a href="pages/jucatori.html">Jucatori</a></li>
+        <li><a href="pages/istorie.html">Istorie</a></li>
+        <li><a href="pages/galerie.html">Galerie</a></li>
+        <li><a href="pages/multimedia.html">Media</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+        <li><a href="pages/login.html" class="nav-cta" data-auth="login">Login</a></li>
+        <li><a href="#" class="nav-cta" data-auth="account" style="display:none">Cont</a></li>
+      </ul>
+
+      <button class="hamburger" aria-label="Meniu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-backdrop"></div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1><span data-i18n="hero.title.pre">Bine ai venit in</span> <span data-i18n="hero.title.span">Basketball</span> <span data-i18n="hero.title.post">World</span></h1>
+        <p data-i18n="hero.subtitle">Echipe, jucatori legendari, istoria sportului si o baza de date live cu meciuri NBA — tot ce inseamna baschetul, intr-un singur loc.</p>
+        <div class="hero-buttons">
+          <a href="pages/jucatori.html" class="btn btn-primary" data-i18n="hero.btn.players">Descopera jucatorii</a>
+          <a href="pages/multimedia.html" class="btn btn-outline" data-i18n="hero.btn.db">Baza de date NBA</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MICHAEL JORDAN — primul -->
+    <section class="section">
+      <div class="showcase reveal">
+        <div class="showcase-text">
+          <span class="tag" data-i18n="idx.jordanTag">⭐ The GOAT</span>
+          <h3>Michael <span>Jordan</span></h3>
+          <p data-i18n="idx.jordanBio">6 titluri NBA, 5x MVP, doi-x campion olimpic — considerat cel mai mare jucator de baschet din toate timpurile. A globalizat baschetul si a definit ce inseamna pasiune, munca si vointa de a castiga.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="pages/jucatori.html" class="btn btn-primary" data-i18n="common.viewProfile">Vezi profilul</a>
+            <a href="pages/istorie.html" class="btn btn-outline" data-i18n="idx.jordanEra">Era Jordan</a>
+          </div>
+        </div>
+        <div class="showcase-img">
+          <img src="images/p-jordan.png" alt="Michael Jordan">
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. STATS — baschetul in cifre -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="idx.stats.title.pre">Baschetul in</span> <span data-i18n="idx.stats.title.span">cifre</span></h2>
+      <p class="section-sub" data-i18n="idx.stats.sub">Date despre cat de mare este sportul cu mingea portocalie la nivel global.</p>
+
+      <div class="bigstat-grid">
+        <div class="bigstat" style="--w: 95%;">
+          <div class="bigstat-icon icon-globe"></div>
+          <div class="bigstat-num"><span data-count="450">0</span><span style="font-size:1.4rem">M+</span></div>
+          <div class="bigstat-label" data-i18n="idx.stats.fans">Fani in lume</div>
+          <div class="bigstat-bar"><i></i></div>
+        </div>
+        <div class="bigstat" style="--w: 100%;">
+          <div class="bigstat-icon icon-trophy"></div>
+          <div class="bigstat-num"><span data-count="30">0</span></div>
+          <div class="bigstat-label" data-i18n="idx.stats.teams">Echipe NBA</div>
+          <div class="bigstat-bar"><i></i></div>
+        </div>
+        <div class="bigstat" style="--w: 88%;">
+          <div class="bigstat-icon icon-flag"></div>
+          <div class="bigstat-num"><span data-count="213">0</span></div>
+          <div class="bigstat-label" data-i18n="idx.stats.countries">Tari membre FIBA</div>
+          <div class="bigstat-bar"><i></i></div>
+        </div>
+        <div class="bigstat" style="--w: 75%;">
+          <div class="bigstat-icon icon-fire"></div>
+          <div class="bigstat-num"><span data-count="1891">0</span></div>
+          <div class="bigstat-label" data-i18n="idx.stats.year">Anul infiintarii</div>
+          <div class="bigstat-bar"><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. JUCATORI — fisheye dock preview -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="idx.players.title.pre">Cei mai mari</span> <span data-i18n="idx.players.title.span">jucatori</span></h2>
+      <p class="section-sub" data-i18n="idx.players.sub">Plimba mouse-ul peste fiecare jucator pentru un efect "fisheye". Click pentru profil complet.</p>
+
+      <div class="dock-wrap">
+        <div class="dock-hint" data-i18n="idx.players.hint">Mouse-ul aproape de jucator → se mareste</div>
+        <div class="dock">
+          <a class="dock-item" href="pages/jucatori.html">
+            <img src="images/p-jordan-head.png" alt="Michael Jordan">
+            <span class="dock-label">Jordan #23</span>
+          </a>
+          <a class="dock-item" href="pages/jucatori.html">
+            <img src="images/p-lebron.png" alt="LeBron James" style="object-position:center 10%;">
+            <span class="dock-label">LeBron #23</span>
+          </a>
+          <a class="dock-item" href="pages/jucatori.html">
+            <img src="images/p-kobe-head.png" alt="Kobe Bryant">
+            <span class="dock-label">Kobe #24</span>
+          </a>
+          <a class="dock-item" href="pages/jucatori.html">
+            <img src="images/p-curry-head.png" alt="Stephen Curry">
+            <span class="dock-label">Curry #30</span>
+          </a>
+          <a class="dock-item" href="pages/jucatori.html">
+            <img src="images/p-wemby-head.png" alt="Wembanyama">
+            <span class="dock-label">Wemby #1</span>
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:20px;">
+        <a href="pages/jucatori.html" class="btn btn-primary" data-i18n="common.allPlayers">Vezi toti jucatorii</a>
+      </div>
+    </section>
+
+    <!-- 5. EXPLORE — feature blocks -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="idx.explore.title.pre">Exploreaza</span> <span data-i18n="idx.explore.title.span">site-ul</span></h2>
+      <p class="section-sub" data-i18n="idx.explore.sub">Treci cu mouse-ul peste fiecare bloc pentru detalii.</p>
+
+      <div class="explore">
+        <a href="pages/jucatori.html" class="x-block big" style="background-image: linear-gradient(135deg, rgba(85,37,131,.6), rgba(0,0,0,.3)), url('images/p-lebron.png'); background-size: contain, cover; background-repeat: no-repeat; background-position: right center, center; background-color:#2a1a4a;">
+          <div class="x-block-info">
+            <h3 data-i18n="idx.explore.players">Jucatori legendari</h3>
+            <p data-i18n="idx.explore.playersDesc">Jordan, Kobe, LeBron, Curry, Wembanyama si multi altii — biografii si statistici.</p>
+          </div>
+        </a>
+
+        <a href="pages/echipe.html" class="x-block tall" style="background-image: url('images/team-lakers.svg'); background-size: 80%; background-repeat: no-repeat; background-position: center; background-color:#1a0a3a;">
+          <div class="x-block-info">
+            <h3 data-i18n="idx.explore.teams">Echipe NBA</h3>
+            <p data-i18n="idx.explore.teamsDesc">Lakers, Celtics, Bulls, Warriors — logo-uri si statistici.</p>
+          </div>
+        </a>
+
+        <a href="pages/istorie.html" class="x-block" style="background-image: url('images/history.jpg');">
+          <div class="x-block-info">
+            <h3 data-i18n="idx.explore.history">Istorie</h3>
+            <p data-i18n="idx.explore.historyDesc">De la 1891 la era Wembanyama.</p>
+          </div>
+        </a>
+
+        <a href="pages/galerie.html" class="x-block" style="background-image: url('images/dunk.jpg');">
+          <div class="x-block-info">
+            <h3 data-i18n="idx.explore.gallery">Galerie</h3>
+            <p data-i18n="idx.explore.galleryDesc">Imagini si momente spectaculoase.</p>
+          </div>
+        </a>
+
+        <a href="pages/multimedia.html" class="x-block" style="background-image: linear-gradient(135deg, rgba(232,85,31,.4), rgba(0,0,0,.3)), url('images/court.jpg');">
+          <div class="x-block-info">
+            <h3 data-i18n="idx.explore.db">Baza de date NBA</h3>
+            <p data-i18n="idx.explore.dbDesc">Finale celebre + cautare live cu API.</p>
+          </div>
+        </a>
+
+        <a href="pages/contact.html" class="x-block" style="background-image: url('images/ball.jpg');">
+          <div class="x-block-info">
+            <h3 data-i18n="idx.explore.contact">Contact</h3>
+            <p data-i18n="idx.explore.contactDesc">Madison Square Garden, NY.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. CURRY — al doilea showcase -->
+    <section class="section">
+      <div class="showcase reveal" style="background: linear-gradient(135deg, #0a1c44, #1a0a3a);">
+        <div class="showcase-img">
+          <img src="images/p-curry.png" alt="Stephen Curry">
+        </div>
+        <div class="showcase-text">
+          <span class="tag" style="background:rgba(253,185,39,.2); color:#FDB927;" data-i18n="idx.curryTag">🔥 Era moderna</span>
+          <h3>Stephen <span style="color:#FDB927;">Curry</span></h3>
+          <p data-i18n="idx.curryBio">Cel mai bun aruncator de 3 puncte din istoria NBA. A revolutionat jocul, transformand aruncarea de la distanta intr-o arma principala. 4 titluri NBA cu Golden State Warriors, 2x MVP — inclusiv primul MVP unanim din istorie.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="pages/jucatori.html" class="btn btn-primary" data-i18n="common.viewProfile">Vezi profilul</a>
+            <a href="pages/echipe.html" class="btn btn-outline">Warriors</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CTA -->
+    <section class="section">
+      <div class="reveal" style="text-align:center; background:linear-gradient(135deg, rgba(232,85,31,.18), rgba(232,85,31,.04)); padding:60px 24px; border-radius:20px; border:1px solid rgba(232,85,31,.3);">
+        <h2 class="section-title" style="margin-bottom:10px;"><span data-i18n="idx.cta.title.pre">Vrei sa fii</span> <span data-i18n="idx.cta.title.span">parte</span> <span data-i18n="idx.cta.title.post">din comunitate?</span></h2>
+        <p class="section-sub" data-i18n="idx.cta.sub">Inregistreaza-te gratuit si primeste noutati despre baschet direct in cont.</p>
+        <a href="pages/register.html" class="btn btn-primary" data-i18n="common.createAcc">Creeaza cont</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Basketball World</h4>
+        <p>Site dedicat pasionatilor de baschet din intreaga lume. Echipe, jucatori, istorie, baza de date NBA cu API live — totul intr-un singur loc.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Linkuri rapide</h4>
+        <ul>
+          <li><a href="index.html">Acasa</a></li>
+          <li><a href="pages/echipe.html">Echipe</a></li>
+          <li><a href="pages/jucatori.html">Jucatori</a></li>
+          <li><a href="pages/istorie.html">Istorie</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resurse</h4>
+        <ul>
+          <li><a href="pages/galerie.html">Galerie</a></li>
+          <li><a href="pages/multimedia.html">Baza de date NBA</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="pages/login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Madison Square Garden, New York</p>
+        <p>contact@basketballworld.com</p>
+        <p>+1 212 465 6741</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span data-current-year></span> Basketball World — proiect informatica. Toate drepturile rezervate.
+    </div>
+  </footer>
+
+  <div class="lightbox"><img alt="preview"></div>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

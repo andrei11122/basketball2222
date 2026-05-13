@@ -1,0 +1,142 @@
+[
+  {
+    "year": 1992,
+    "decade": "90s",
+    "stage": "Finals G6",
+    "date": "1992-06-14",
+    "team1": { "name": "Chicago Bulls", "score": 97, "winner": true },
+    "team2": { "name": "Portland Blazers", "score": 93, "winner": false },
+    "mvp": "Michael Jordan",
+    "highlight": "Jordan castiga al doilea titlu cu Bulls. \"The Shrug game\" cu 6 triple in prima repriza la G1."
+  },
+  {
+    "year": 1996,
+    "decade": "90s",
+    "stage": "Finals G6",
+    "date": "1996-06-16",
+    "team1": { "name": "Chicago Bulls", "score": 87, "winner": true },
+    "team2": { "name": "Seattle Sonics", "score": 75, "winner": false },
+    "mvp": "Michael Jordan",
+    "highlight": "Sezonul perfect 72-10 incheiat cu titlul. Al 4-lea inel pentru Jordan."
+  },
+  {
+    "year": 1998,
+    "decade": "90s",
+    "stage": "Finals G6",
+    "date": "1998-06-14",
+    "team1": { "name": "Chicago Bulls", "score": 87, "winner": true },
+    "team2": { "name": "Utah Jazz", "score": 86, "winner": false },
+    "mvp": "Michael Jordan",
+    "highlight": "\"The Last Shot\" — Jordan inscrie peste Russell la 5.2 secunde de final. Ultimul titlu cu Bulls."
+  },
+  {
+    "year": 2008,
+    "decade": "2000s",
+    "stage": "Finals G6",
+    "date": "2008-06-17",
+    "team1": { "name": "Boston Celtics", "score": 131, "winner": true },
+    "team2": { "name": "L.A. Lakers", "score": 92, "winner": false },
+    "mvp": "Paul Pierce",
+    "highlight": "Big Three (Pierce, Garnett, Allen) aduce inelul 17 la Boston. 39 puncte diferenta in finala."
+  },
+  {
+    "year": 2010,
+    "decade": "2000s",
+    "stage": "Finals G7",
+    "date": "2010-06-17",
+    "team1": { "name": "L.A. Lakers", "score": 83, "winner": true },
+    "team2": { "name": "Boston Celtics", "score": 79, "winner": false },
+    "mvp": "Kobe Bryant",
+    "highlight": "Kobe castiga al 5-lea titlu intr-un G7 plin de tensiune. Razbunarea pentru 2008."
+  },
+  {
+    "year": 2013,
+    "decade": "2010s",
+    "stage": "Finals G6",
+    "date": "2013-06-18",
+    "team1": { "name": "Miami Heat", "score": 103, "winner": true },
+    "team2": { "name": "San Antonio Spurs", "score": 100, "winner": false },
+    "mvp": "LeBron James",
+    "highlight": "Ray Allen tripleaza cu 5.2 secunde — \"The Ray Allen Shot\". Heat castiga in OT."
+  },
+  {
+    "year": 2016,
+    "decade": "2010s",
+    "stage": "Finals G7",
+    "date": "2016-06-19",
+    "team1": { "name": "Cleveland Cavaliers", "score": 93, "winner": true },
+    "team2": { "name": "Golden State Warriors", "score": 89, "winner": false },
+    "mvp": "LeBron James",
+    "highlight": "Cavs revin de la 1-3. \"The Block\" si \"The Shot\" — momente intrate in legenda."
+  },
+  {
+    "year": 2017,
+    "decade": "2010s",
+    "stage": "Finals G5",
+    "date": "2017-06-12",
+    "team1": { "name": "Golden State Warriors", "score": 129, "winner": true },
+    "team2": { "name": "Cleveland Cavaliers", "score": 120, "winner": false },
+    "mvp": "Kevin Durant",
+    "highlight": "Durant in primul sau sezon la Warriors — castiga titlul si Finals MVP."
+  },
+  {
+    "year": 2019,
+    "decade": "2010s",
+    "stage": "Finals G6",
+    "date": "2019-06-13",
+    "team1": { "name": "Toronto Raptors", "score": 114, "winner": true },
+    "team2": { "name": "Golden State Warriors", "score": 110, "winner": false },
+    "mvp": "Kawhi Leonard",
+    "highlight": "Primul titlu NBA in afara SUA. Kawhi domina cu 22+ ppg in finala."
+  },
+  {
+    "year": 2020,
+    "decade": "2020s",
+    "stage": "Finals G6 (Bubble)",
+    "date": "2020-10-11",
+    "team1": { "name": "L.A. Lakers", "score": 106, "winner": true },
+    "team2": { "name": "Miami Heat", "score": 93, "winner": false },
+    "mvp": "LeBron James",
+    "highlight": "Sezonul Bubble in pandemia COVID. LeBron — primul jucator cu Finals MVP cu 3 echipe diferite."
+  },
+  {
+    "year": 2022,
+    "decade": "2020s",
+    "stage": "Finals G6",
+    "date": "2022-06-16",
+    "team1": { "name": "Golden State Warriors", "score": 103, "winner": true },
+    "team2": { "name": "Boston Celtics", "score": 90, "winner": false },
+    "mvp": "Stephen Curry",
+    "highlight": "Primul Finals MVP din cariera lui Curry. Al 4-lea inel pentru Warriors."
+  },
+  {
+    "year": 2023,
+    "decade": "2020s",
+    "stage": "Finals G5",
+    "date": "2023-06-12",
+    "team1": { "name": "Denver Nuggets", "score": 94, "winner": true },
+    "team2": { "name": "Miami Heat", "score": 89, "winner": false },
+    "mvp": "Nikola Jokic",
+    "highlight": "Primul titlu din istoria Nuggets. Jokic — center european dominator."
+  },
+  {
+    "year": 2024,
+    "decade": "2020s",
+    "stage": "Finals G5",
+    "date": "2024-06-17",
+    "team1": { "name": "Boston Celtics", "score": 106, "winner": true },
+    "team2": { "name": "Dallas Mavericks", "score": 88, "winner": false },
+    "mvp": "Jaylen Brown",
+    "highlight": "Al 18-lea titlu pentru Celtics — record absolut in istoria NBA."
+  },
+  {
+    "year": 2025,
+    "decade": "2020s",
+    "stage": "Conference Finals",
+    "date": "2025-05-12",
+    "team1": { "name": "Oklahoma City Thunder", "score": 118, "winner": true },
+    "team2": { "name": "Minnesota Timberwolves", "score": 103, "winner": false },
+    "mvp": "Shai Gilgeous-Alexander",
+    "highlight": "SGA domina playoff-ul. Thunder spre prima finala dupa era Durant-Westbrook-Harden."
+  }
+]
