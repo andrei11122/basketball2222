@@ -33,6 +33,78 @@
 
   <main>
 
+    <!-- ===== INTRO HERO ===== -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="media.intro.title.pre">Baza de date</span> <span data-i18n="media.intro.title.span">NBA</span> & multimedia</h2>
+      <p class="section-sub" data-i18n="media.intro.sub">Video local HTML5, embed YouTube, 2 piese audio, plus baza de date cu finale celebre si cautare live in API-ul TheSportsDB.</p>
+    </section>
+
+    <!-- ===== VIDEO + AUDIO — compact split layout ===== -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="media.va.title.pre">Video</span> <span data-i18n="media.va.title.span">& sunete</span> de arena</h2>
+      <p class="section-sub" data-i18n="media.va.sub">Clip local HTML5 (faulturi NBA) si doua piese audio oficiale — sirena si fluier. Tot din folderele <code>videos/</code> si <code>audio/</code>.</p>
+
+      <div class="va-grid">
+
+        <!-- LEFT — local HTML5 video -->
+        <article class="va-video media-card">
+          <div class="media-card-header">
+            <span class="media-tag local">HTML5 · Local</span>
+            <h3>Faulturi NBA — compilatie</h3>
+            <p>Clip oficial NBA "Life Sentence Fouls" stocat local in <code>videos/fouls.mp4</code>. Functioneaza si offline.</p>
+          </div>
+          <video class="local-video" controls preload="metadata" poster="../images/dunk.jpg">
+            <source src="../videos/fouls.mp4" type="video/mp4">
+            Browser-ul tau nu suporta HTML5 video. <a href="../videos/fouls.mp4">Descarca clipul</a>.
+          </video>
+          <div class="media-card-actions">
+            <button class="btn btn-outline btn-sm" data-vid-action="play">▶ Play</button>
+            <button class="btn btn-outline btn-sm" data-vid-action="pause">⏸ Pause</button>
+            <button class="btn btn-outline btn-sm" data-vid-action="mute">🔇 Mute</button>
+            <button class="btn btn-outline btn-sm" data-vid-action="full">⛶ Fullscreen</button>
+          </div>
+        </article>
+
+        <!-- RIGHT — two audio stacked -->
+        <div class="va-audios">
+
+          <article class="audio-card va-audio">
+            <div class="audio-icon">🔔</div>
+            <div class="audio-info">
+              <span class="audio-tag">Track 1 · Horn</span>
+              <h3>Sirena oficiala NBA</h3>
+              <p>Sunetul oficial al sirenei NBA care marcheaza sfarsitul unei reprize.</p>
+              <audio controls preload="metadata" data-audio="horn">
+                <source src="../audio/horn.mp3" type="audio/mpeg">
+                Browser-ul tau nu suporta audio HTML5.
+              </audio>
+              <div class="audio-meta">
+                <span>📁 audio/horn.mp3</span><span class="dot">•</span><span>MP3</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="audio-card va-audio">
+            <div class="audio-icon">📯</div>
+            <div class="audio-info">
+              <span class="audio-tag">Track 2 · Whistle</span>
+              <h3>Fluier oficial NBA</h3>
+              <p>Sunetul universal — fluier de arbitru oficial NBA.</p>
+              <audio controls preload="metadata" data-audio="whistle">
+                <source src="../audio/whistle.mp3" type="audio/mpeg">
+                Browser-ul tau nu suporta audio HTML5.
+              </audio>
+              <div class="audio-meta">
+                <span>📁 audio/whistle.mp3</span><span class="dot">•</span><span>MP3</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- ===== LIVE API SEARCH ===== -->
     <section class="section">
       <div style="text-align:center; margin-bottom:20px;">
@@ -263,6 +335,35 @@
     <div class="footer-bottom">&copy; <span data-current-year></span> Basketball World — proiect informatica.</div>
   </footer>
 
+  <!-- Custom video controls + audio mutual-pause -->
+  <script>
+    (function () {
+      const video = document.querySelector('.local-video');
+      if (video) {
+        document.querySelectorAll('[data-vid-action]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const a = btn.dataset.vidAction;
+            if (a === 'play')  video.play();
+            if (a === 'pause') video.pause();
+            if (a === 'mute')  { video.muted = !video.muted; btn.textContent = video.muted ? '🔊 Unmute' : '🔇 Mute'; }
+            if (a === 'full')  { (video.requestFullscreen || video.webkitRequestFullscreen)?.call(video); }
+          });
+        });
+      }
+      // pauza reciproca: cand pornesti un audio, opreste-l pe celalalt + videoul
+      const audios = document.querySelectorAll('audio[data-audio]');
+      audios.forEach(a => {
+        a.addEventListener('play', () => {
+          audios.forEach(b => { if (b !== a) b.pause(); });
+          if (video && !video.paused) video.pause();
+        });
+      });
+      if (video) {
+        video.addEventListener('play', () => audios.forEach(a => a.pause()));
+      }
+    })();
+  </script>
+
   <!-- API search via TheSportsDB (free, no key) -->
   <script>
     (function () {
@@ -395,6 +496,9 @@
   </script>
   <script src="../js/translations.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/effects.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/newsletter.js"></script>
   <script src="../js/auth.js"></script>
 </body>
 </html>

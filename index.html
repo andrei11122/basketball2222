@@ -52,6 +52,66 @@
           <a href="pages/jucatori.html" class="btn btn-primary" data-i18n="hero.btn.players">Descopera jucatorii</a>
           <a href="pages/multimedia.html" class="btn btn-outline" data-i18n="hero.btn.db">Baza de date NBA</a>
         </div>
+        <div class="hero-pullquote">
+          <span><strong>09</strong> <span data-i18n="idx.hp.sections">sectiuni</span></span>
+          <span><strong>30</strong> <span data-i18n="idx.hp.teams">echipe NBA</span></span>
+          <span><strong>17</strong> <span data-i18n="idx.hp.players">jucatori legendari</span></span>
+          <span><strong>134</strong> <span data-i18n="idx.hp.years">de ani</span></span>
+          <span><strong>1</strong> <span data-i18n="idx.hp.passion">pasiune</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1B. PLAYER OF THE DAY — auto-rotating featured player -->
+    <section class="section" style="padding-top: 60px;">
+      <div class="potd reveal" id="potd"
+           data-players='[
+             {
+               "name":"Michael Jordan","accent":"#CE1141",
+               "img":"images/p-jordan.png","kicker":"GOAT · His Airness",
+               "tagline":"He didn{{q}}t play. He defined the sport.",
+               "bio":"Six rings in eight years. Five MVPs. Six Finals MVPs in six appearances. Numbers can{{q}}t hold what Jordan made of the game.",
+               "stats":[{"v":"6","l":"Titluri"},{"v":"5","l":"MVP"},{"v":"30.1","l":"PPG"},{"v":"32K+","l":"Puncte"}]
+             },
+             {
+               "name":"Kobe Bryant","accent":"#552583",
+               "img":"images/p-kobe.png","kicker":"Black Mamba · #24",
+               "tagline":"Mamba Mentality is not a slogan. It is a method.",
+               "bio":"Eighty-one points in a single night. Twenty seasons in purple and gold. Two retired jerseys. One uncompromising standard.",
+               "stats":[{"v":"5","l":"Titluri"},{"v":"1","l":"MVP"},{"v":"81","l":"vs TOR"},{"v":"33K+","l":"Puncte"}]
+             },
+             {
+               "name":"LeBron James","accent":"#FDB927",
+               "img":"images/p-lebron.png","kicker":"King James · The Chosen One",
+               "tagline":"Two decades and the ceiling is still moving.",
+               "bio":"All-time scoring leader. Four titles across three franchises. The first to play in four different decades — and counting.",
+               "stats":[{"v":"4","l":"Titluri"},{"v":"4","l":"MVP"},{"v":"27.1","l":"PPG"},{"v":"40K+","l":"Puncte"}]
+             },
+             {
+               "name":"Stephen Curry","accent":"#1D428A",
+               "img":"images/p-curry.png","kicker":"Chef Curry · #30",
+               "tagline":"He stretched the floor. Then he stretched the sport.",
+               "bio":"First unanimous MVP. Single-season three-point record. The reason every modern offense starts thirty feet from the rim.",
+               "stats":[{"v":"4","l":"Titluri"},{"v":"2","l":"MVP"},{"v":"3800+","l":"3P-uri"},{"v":"24.8","l":"PPG"}]
+             },
+             {
+               "name":"Victor Wembanyama","accent":"#C4CED4",
+               "img":"images/p-wemby.png","kicker":"Wemby · 2.24m generational",
+               "tagline":"A guard{{q}}s skill in a center{{q}}s body. New rules incoming.",
+               "bio":"First pick, 2023. Rookie of the Year. Already breaking statistical lines drawn since the founding of the league.",
+               "stats":[{"v":"0","l":"Titluri"},{"v":"1","l":"ROY"},{"v":"21.4","l":"PPG"},{"v":"3.6","l":"BPG"}]
+             }
+           ]'>
+        <div class="potd-img">
+          <img src="images/p-jordan.png" alt="Player of the day">
+        </div>
+        <div class="potd-body">
+          <div class="potd-kicker"><span data-i18n="idx.potd.kicker">Jucatorul zilei</span></div>
+          <h2 class="potd-name">—</h2>
+          <p class="potd-bio">—</p>
+          <div class="potd-stats"></div>
+        </div>
+        <div class="potd-dots"></div>
       </div>
     </section>
 
@@ -210,7 +270,75 @@
       </div>
     </section>
 
-    <!-- 7. CTA -->
+    <!-- 7. QUIZ -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="idx.quiz.title.pre">Cat de bine</span> <span data-i18n="idx.quiz.title.span">cunosti NBA?</span></h2>
+      <p class="section-sub" data-i18n="idx.quiz.sub">10 intrebari rapide. Scorul tau cel mai mare se salveaza local in browser.</p>
+
+      <div class="quiz-wrap reveal" id="quiz">
+        <div class="quiz-header">
+          <div class="quiz-progress">
+            <span class="quiz-step"><span id="q-step">1</span> / 10</span>
+            <div class="quiz-bar"><i id="q-bar"></i></div>
+          </div>
+          <div class="quiz-score">
+            <span class="quiz-score-label" data-i18n="idx.quiz.score">Scor</span>
+            <span id="q-score">0</span>
+          </div>
+        </div>
+
+        <div class="quiz-body">
+          <h3 id="q-question">—</h3>
+          <div id="q-options" class="quiz-options"></div>
+        </div>
+
+        <div class="quiz-footer">
+          <div class="quiz-best">
+            <span data-i18n="idx.quiz.best">Cel mai bun scor:</span>
+            <strong id="q-best">0</strong> / 10
+          </div>
+          <button class="btn btn-outline btn-sm" id="q-reset" data-i18n="idx.quiz.reset">↻ Reseteaza</button>
+        </div>
+
+        <div class="quiz-end" id="q-end" hidden>
+          <div class="quiz-end-emoji" id="q-end-emoji">🏆</div>
+          <h3 id="q-end-title">Felicitari!</h3>
+          <p id="q-end-text">Ai terminat quizul.</p>
+          <div class="quiz-end-actions">
+            <button class="btn btn-primary" id="q-again" data-i18n="idx.quiz.again">Reincearca</button>
+            <a class="btn btn-outline" href="pages/jucatori.html" data-i18n="idx.quiz.players">Vezi jucatori</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. SHOOTER MINI-GAME -->
+    <section class="section">
+      <h2 class="section-title"><span data-i18n="idx.shoot.title.pre">Arunca</span> <span data-i18n="idx.shoot.title.span">la cos!</span></h2>
+      <p class="section-sub" data-i18n="idx.shoot.sub">Trage cu mouse-ul de minge ca de o pratie. 60 secunde, combo bonus pentru cosuri rapide. Cosul se misca!</p>
+
+      <div class="shooter-wrap reveal" id="shooter">
+        <div class="shooter-stats">
+          <div class="ss-block"><span class="ss-lbl" data-i18n="idx.shoot.score">Scor</span><strong data-shooter-score>0</strong></div>
+          <div class="ss-block"><span class="ss-lbl" data-i18n="idx.shoot.time">Timp</span><strong data-shooter-time>60</strong><span class="ss-unit">s</span></div>
+          <div class="ss-block combo"><span class="ss-lbl" data-i18n="idx.shoot.combo">Combo</span><strong data-shooter-combo>x1</strong></div>
+          <div class="ss-block hi"><span class="ss-lbl" data-i18n="idx.shoot.best">Best</span><strong data-shooter-hi>0</strong></div>
+        </div>
+
+        <div class="shooter-canvas-wrap">
+          <canvas></canvas>
+          <div class="shooter-msg" data-shooter-msg></div>
+        </div>
+
+        <div class="shooter-controls">
+          <button class="btn btn-primary" data-shooter-start data-i18n="idx.shoot.start">Start</button>
+          <button class="btn btn-outline btn-sm" data-shooter-reset data-i18n="idx.shoot.reset">↻ Reseteaza best</button>
+          <span class="shooter-tip" data-i18n="idx.shoot.tip">💡 Tine apasat mouse-ul, trage de minge si elibereaza ca sa arunci.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CTA -->
     <section class="section">
       <div class="reveal" style="text-align:center; background:linear-gradient(135deg, rgba(232,85,31,.18), rgba(232,85,31,.04)); padding:60px 24px; border-radius:20px; border:1px solid rgba(232,85,31,.3);">
         <h2 class="section-title" style="margin-bottom:10px;"><span data-i18n="idx.cta.title.pre">Vrei sa fii</span> <span data-i18n="idx.cta.title.span">parte</span> <span data-i18n="idx.cta.title.post">din comunitate?</span></h2>
@@ -266,6 +394,12 @@
 
   <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/newsletter.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/shooter.js"></script>
+  <script src="js/potd.js"></script>
 </body>
 </html>
