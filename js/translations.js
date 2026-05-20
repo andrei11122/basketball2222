@@ -218,6 +218,28 @@ window.I18N = {
     "auth.reg.city":  "Oras",
     "auth.reg.favTeam":  "Echipa favorita",
     "auth.reg.choose":  "Alege...",
+    "auth.reg.otherTeam": "Alta echipa",
+
+    /* contact form */
+    "contact.form.title": "Trimite mesaj",
+
+    /* multimedia — Momente celebre cards */
+    "media.moments.title.pre":  "Momente",
+    "media.moments.title.span": "celebre",
+    "media.moments.sub":  "Cele mai dramatice momente din istoria NBA — click pe oricare ca sa vezi clipul pe YouTube.",
+    "media.moments.lastshot":  "The Last Shot — 1998",
+    "media.moments.lastshot.bio": "Michael Jordan, Game 6 Finals vs Jazz. Pucat decisiv peste Bryon Russell la 5.2 secunde. Ultimul titlu Bulls.",
+    "media.moments.rayallen":  "Ray Allen 3 — 2013",
+    "media.moments.rayallen.bio": "Game 6 Finals, Heat vs Spurs. Ray Allen tripleaza din colt cu 5.2 secunde de final.",
+    "media.moments.block":  "The Block — 2016",
+    "media.moments.block.bio": "LeBron James in Game 7 Finals, contra Warriors. Block memorabil pe Andre Iguodala.",
+    "media.moments.curry":  "Curry 13×3-pointers — 2016",
+    "media.moments.curry.bio": "Stephen Curry stabileste record NBA cu 13 triple intr-un singur meci.",
+    "media.moments.kobe":  "Kobe 81 puncte — 2006",
+    "media.moments.kobe.bio": "Kobe Bryant inscrie 81 de puncte vs Toronto — al doilea total individual din istoria NBA.",
+    "media.moments.wemby":  "Wembanyama 5×5 — 2024",
+    "media.moments.wemby.bio": "Victor Wembanyama, primul rookie cu 5 blocuri si 5 steluri intr-un meci.",
+    "common.watch":  "▶ Vezi pe YouTube",
 
     /* footer */
     "ft.about":   "Basketball World",
@@ -447,6 +469,28 @@ window.I18N = {
     "auth.reg.city":  "City",
     "auth.reg.favTeam":  "Favorite team",
     "auth.reg.choose":  "Choose...",
+    "auth.reg.otherTeam": "Other team",
+
+    /* contact form */
+    "contact.form.title": "Send message",
+
+    /* multimedia — Famous moments cards */
+    "media.moments.title.pre":  "Famous",
+    "media.moments.title.span": "moments",
+    "media.moments.sub":  "The most dramatic moments in NBA history — click any card to watch the clip on YouTube.",
+    "media.moments.lastshot":  "The Last Shot — 1998",
+    "media.moments.lastshot.bio": "Michael Jordan, Game 6 Finals vs Jazz. Game-winning shot over Bryon Russell with 5.2 seconds left. Bulls' last title.",
+    "media.moments.rayallen":  "Ray Allen 3 — 2013",
+    "media.moments.rayallen.bio": "Game 6 Finals, Heat vs Spurs. Ray Allen sinks a corner three with 5.2 seconds left.",
+    "media.moments.block":  "The Block — 2016",
+    "media.moments.block.bio": "LeBron James in Game 7 Finals vs Warriors. Iconic block on Andre Iguodala.",
+    "media.moments.curry":  "Curry 13×3-pointers — 2016",
+    "media.moments.curry.bio": "Stephen Curry sets the NBA record with 13 threes in a single game.",
+    "media.moments.kobe":  "Kobe 81 points — 2006",
+    "media.moments.kobe.bio": "Kobe Bryant drops 81 points vs Toronto — second-highest individual total in NBA history.",
+    "media.moments.wemby":  "Wembanyama 5×5 — 2024",
+    "media.moments.wemby.bio": "Victor Wembanyama, the first rookie ever with 5 blocks and 5 steals in one game.",
+    "common.watch":  "▶ Watch on YouTube",
 
     /* footer */
     "ft.about":   "Basketball World",

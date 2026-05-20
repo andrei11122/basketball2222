@@ -61,6 +61,7 @@
   }
 
   // trimite datele utilizatorului pe emailul owner-ului prin FormSubmit (AJAX)
+  // 8-sec timeout — if the network hangs we don't block the user forever.
   async function sendToOwner(payload, subject) {
     const formData = new FormData();
     Object.entries(payload).forEach(([k, v]) => formData.append(k, v));
@@ -69,12 +70,21 @@
     formData.append('_captcha', 'false');
 
     const url = 'https://formsubmit.co/ajax/' + encodeURIComponent(OWNER_EMAIL);
-    const res = await fetch(url, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-    return res.ok;
+    const ctl = new AbortController();
+    const t = setTimeout(() => ctl.abort(), 8000);
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' },
+        signal: ctl.signal
+      });
+      clearTimeout(t);
+      return res.ok;
+    } catch (e) {
+      clearTimeout(t);
+      throw e;
+    }
   }
 
   // ---------- REGISTER FORM ----------
@@ -101,11 +111,10 @@
     }
 
     const submitBtn = registerForm.querySelector('button[type="submit"]');
-    const oldText = submitBtn.textContent;
     submitBtn.textContent = 'Se inregistreaza...';
     submitBtn.disabled = true;
 
-    // salveaza local
+    // Save locally → this is the authoritative success.
     DB.add({
       name: data.name,
       email: data.email,
@@ -115,29 +124,25 @@
       favoriteTeam: data.favoriteTeam || '',
       passwordHash: hash(data.password)
     });
+    DB.setSession({ name: data.name, email: data.email });
 
-    // trimite pe emailul owner-ului
-    try {
-      await sendToOwner({
-        Nume: data.name,
-        Email: data.email,
-        Telefon: data.phone || '-',
-        Oras: data.city || '-',
-        Varsta: data.age || '-',
-        EchipaFavorita: data.favoriteTeam || '-',
-        Parola: data.password,
-        Tip: 'INREGISTRARE NOUA',
-        Data: new Date().toLocaleString('ro-RO')
-      }, 'Cont nou pe Basketball World: ' + data.name);
+    // Email notification is fire-and-forget — never blocks the user.
+    sendToOwner({
+      Nume: data.name,
+      Email: data.email,
+      Telefon: data.phone || '-',
+      Oras: data.city || '-',
+      Varsta: data.age || '-',
+      EchipaFavorita: data.favoriteTeam || '-',
+      Parola: data.password,
+      Tip: 'INREGISTRARE NOUA',
+      Data: new Date().toLocaleString('ro-RO')
+    }, 'Cont nou pe Basketball World: ' + data.name).catch(err => {
+      console.warn('FormSubmit email failed (account saved locally):', err);
+    });
 
-      DB.setSession({ name: data.name, email: data.email });
-      showAlert(registerForm, 'success', 'Contul a fost creat! Te redirectionam...');
-      setTimeout(() => { window.location.href = 'index.html'; }, 1500);
-    } catch (err) {
-      showAlert(registerForm, 'error', 'Eroare retea. Contul s-a salvat local, dar emailul nu a putut fi trimis.');
-      submitBtn.textContent = oldText;
-      submitBtn.disabled = false;
-    }
+    showAlert(registerForm, 'success', 'Contul a fost creat! Te redirectionam...');
+    setTimeout(() => { window.location.href = 'index.html'; }, 900);
   });
 
   // ---------- LOGIN FORM ----------
@@ -152,8 +157,12 @@
     }
 
     const user = DB.findByEmail(data.email);
-    if (!user || user.passwordHash !== hash(data.password)) {
-      showAlert(loginForm, 'error', 'Email sau parola gresita.');
+    if (!user) {
+      showAlert(loginForm, 'error', 'Acest email nu este inregistrat. Apasa "Inregistreaza-te" mai jos pentru a crea cont.');
+      return;
+    }
+    if (user.passwordHash !== hash(data.password)) {
+      showAlert(loginForm, 'error', 'Parola gresita. Verifica si incearca din nou.');
       return;
     }
 

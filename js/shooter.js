@@ -181,6 +181,9 @@
 
     // ball physics — slow & graceful arc
     if (ball.inFlight) {
+      // remember previous position for swept collision (line segment)
+      const prevX = ball.x, prevY = ball.y;
+
       ball.vy += PHY.gravity;
       ball.vx *= PHY.dampX; ball.vy *= PHY.dampY;
       const sp = Math.hypot(ball.vx, ball.vy);
@@ -192,6 +195,11 @@
       ball.y += ball.vy;
       ball.rotation += ball.vx * 0.03;
 
+      // SNAPSHOT after physics step but BEFORE any collision adjustments.
+      // The bucket detection MUST use this — otherwise rim-post collisions
+      // push the ball below the rim plane and fake a "score".
+      const postPhyX = ball.x, postPhyY = ball.y;
+
       // trail
       ball.trail.push({ x: ball.x, y: ball.y, life: 1 });
       if (ball.trail.length > 16) ball.trail.shift();
@@ -201,12 +209,14 @@
       const rimR = hoop.rimRight + hoop.moveX;
       const rimY = hoop.rimY;
 
-      // rim collision (two small circles)
+      // rim collision (two small circles) — sets the "no bucket this frame" flag
+      let rimHitThisFrame = false;
       [{ x: rimL, y: rimY }, { x: rimR, y: rimY }].forEach(p => {
         const dx = ball.x - p.x;
         const dy = ball.y - p.y;
         const d = Math.hypot(dx, dy);
         if (d < ball.r + 3) {
+          rimHitThisFrame = true;
           // bounce off the rim
           const nx = dx / d, ny = dy / d;
           const dot = ball.vx * nx + ball.vy * ny;
@@ -226,31 +236,41 @@
         spawnSplash(ball.x, ball.y, '#ffffff', 4);
       }
 
-      // BUCKET — ball crosses rim plane between the two rim posts, falling
-      if (ball.vy > 0 && ball.y - ball.r > rimY && ball.y - ball.r < rimY + 10
-          && ball.x > rimL && ball.x < rimR
-          && !ball.scoredThisShot) {
-        ball.scoredThisShot = true;
-        const now = performance.now();
-        if (now - state.lastBucketTime < 4500) state.combo++;
-        else state.combo = 0;
-        state.lastBucketTime = now;
-        state.multiplier = 1 + state.combo;
-        const points = 2 * state.multiplier;
-        state.score += points;
-        if (state.score > state.hi) {
-          state.hi = state.score;
-          localStorage.setItem(HI_KEY, String(state.hi));
+      // BUCKET — swept-line check using PRE-collision snapshot, AND only if
+      // we didn't bounce off a rim post this frame. This kills the false-
+      // positive where a rim hit pushes the ball below rimY and looks like
+      // a clean pass-through.
+      if (!ball.scoredThisShot && !rimHitThisFrame
+          && ball.vy > 0 && prevY < rimY && postPhyY >= rimY) {
+        // interpolate: at what fraction t in [0,1] did the segment cross rimY?
+        const t = (rimY - prevY) / (postPhyY - prevY);
+        const crossX = prevX + (postPhyX - prevX) * t;
+        // require ball.r margin from rim posts so a ball center barely inside
+        // (which physically would clip the post) doesn't count
+        const margin = ball.r;
+        if (crossX > rimL + margin && crossX < rimR - margin) {
+          ball.scoredThisShot = true;
+          const now = performance.now();
+          if (now - state.lastBucketTime < 4500) state.combo++;
+          else state.combo = 0;
+          state.lastBucketTime = now;
+          state.multiplier = 1 + state.combo;
+          const points = 2 * state.multiplier;
+          state.score += points;
+          if (state.score > state.hi) {
+            state.hi = state.score;
+            localStorage.setItem(HI_KEY, String(state.hi));
+          }
+          elScore.textContent = state.score;
+          elHi.textContent = state.hi;
+          elCombo.textContent = 'x' + state.multiplier;
+          elMsg.textContent = state.combo >= 2
+            ? `🔥 ${state.combo + 1} la rand! +${points}`
+            : `🏀 Cos! +${points}`;
+          elMsg.classList.add('flash');
+          setTimeout(() => elMsg.classList.remove('flash'), 600);
+          spawnSplash(ball.x, ball.y, '#2ecc71', 30);
         }
-        elScore.textContent = state.score;
-        elHi.textContent = state.hi;
-        elCombo.textContent = 'x' + state.multiplier;
-        elMsg.textContent = state.combo >= 2
-          ? `🔥 ${state.combo + 1} la rand! +${points}`
-          : `🏀 Cos! +${points}`;
-        elMsg.classList.add('flash');
-        setTimeout(() => elMsg.classList.remove('flash'), 600);
-        spawnSplash(ball.x, ball.y, '#2ecc71', 30);
       }
 
       // out of bounds: reset
